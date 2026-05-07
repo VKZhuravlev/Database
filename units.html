@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units - Saudi Developers Database</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/units.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Developers</a>
+        <a href="projects.html">Projects</a>
+        <a href="map.html">Map</a>
+        <a href="units.html" class="active">Units</a>
+        <a href="#" onclick="openDocuments(); return false;">Documents</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Project Units</h1>
+        
+        <div class="filters">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search units by project name or ID...">
+            </div>
+            
+            <div class="filter-group">
+                <select id="projectFilter">
+                    <option value="">All Projects</option>
+                </select>
+                
+                <select id="brFilter">
+                    <option value="">All Bedrooms</option>
+                    <option value="1">1 BR</option>
+                    <option value="2">2 BR</option>
+                    <option value="3">3 BR</option>
+                    <option value="4">4+ BR</option>
+                </select>
+                
+                <select id="typeFilter">
+                    <option value="">All Unit Types</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Статистика в карточках -->
+        <div class="units-stats" id="unitsStats">
+            <div class="stat-card">
+                <div class="stat-label">Total Units</div>
+                <div class="stat-value" id="statTotal">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Price</div>
+                <div class="stat-value" id="statAvgPrice">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Price/m²</div>
+                <div class="stat-value" id="statAvgSqm">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Area</div>
+                <div class="stat-value" id="statAvgArea">-</div>
+            </div>
+        </div>
+        
+        <div class="table-responsive">
+            <table id="unitsTable">
+                <thead>
+                    <tr>
+                        <th>Project ID</th>
+                        <th>Project Name</th>
+                        <th>Developer</th>
+                        <th>Area (m²)</th>
+                        <th>Bedrooms</th>
+                        <th>Floor</th>
+                        <th>Price (SAR)</th>
+                        <th>Price/m²</th>
+                    </tr>
+                </thead>
+                <tbody id="unitsBody">
+                    <tr>
+                        <td colspan="8" style="text-align: center;">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        function openDocuments() {
+            window.open('https://drive.google.com/drive/folders/1HSmp1l5AyGOywzB0rxsfSB-VmbSFmxH_?usp=drive_link', '_blank');
+        }
+    </script>
+    <script src="js/csv-loader.js"></script>
+    <script src="js/units.js"></script>
+</body>
+</html>

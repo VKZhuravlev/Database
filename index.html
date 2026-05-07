@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Developers Database</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="active">Developers</a>
+        <a href="projects.html">Projects</a>
+        <a href="map.html">Map</a>
+        <a href="units.html">Units</a>
+        <a href="#" onclick="openDocuments(); return false;">Documents</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Saudi Real Estate Developers</h1>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search developers by name or ID...">
+        </div>
+        
+        <div class="stats">
+            Total Developers: <span id="totalCount">Loading...</span>
+        </div>
+        
+        <table id="developersTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name (EN)</th>
+                    <th>Name (AR)</th>
+                    <th>Headquarters</th>
+                    <th>Employees</th>
+                    <th>Projects</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="developersBody">
+                <tr>
+                    <td colspan="7" style="text-align: center;">Loading data...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Модальное окно для деталей -->
+    <div id="developerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="developerDetails"></div>
+        </div>
+    </div>
+    
+    <script>
+        function openDocuments() {
+            window.open('https://drive.google.com/drive/folders/1HSmp1l5AyGOywzB0rxsfSB-VmbSFmxH_?usp=drive_link', '_blank');
+        }
+    </script>
+    <script src="js/csv-loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

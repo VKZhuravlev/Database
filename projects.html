@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Saudi Developers Database</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Developers</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="map.html">Map</a>
+        <a href="units.html">Units</a>
+        <a href="#" onclick="openDocuments(); return false;">Documents</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Real Estate Projects</h1>
+        
+        <div class="filters">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search projects by name or ID...">
+            </div>
+            
+            <div class="filter-group">
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="planned">Planned</option>
+                    <option value="ongoing">Ongoing</option>
+                    <option value="ready">Ready</option>
+                </select>
+                
+                <select id="typeFilter">
+                    <option value="">All Types</option>
+                </select>
+                
+                <select id="developerFilter">
+                    <option value="">All Developers</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="stats">
+            Total Projects: <span id="totalCount">Loading...</span>
+        </div>
+        
+        <div class="table-responsive">
+            <table id="projectsTable">
+                <thead>
+                    <tr>
+                        <th>Project ID</th>
+                        <th>Project Name (EN)</th>
+                        <th>Project Name (AR)</th>
+                        <th>Developer</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="projectsBody">
+                    <tr>
+                        <td colspan="7" style="text-align: center;">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Модальное окно для деталей проекта -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <div id="projectDetails"></div>
+        </div>
+    </div>
+    
+    <script>
+        function openDocuments() {
+            window.open('https://drive.google.com/drive/folders/1HSmp1l5AyGOywzB0rxsfSB-VmbSFmxH_?usp=drive_link', '_blank');
+        }
+    </script>
+    <script src="js/csv-loader.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>
